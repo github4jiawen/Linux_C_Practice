@@ -21,8 +21,8 @@ void reverse(char *str)
 	for (int i = 0; i < len/2; ++i)
 	{
 		char ch=str[i];
-		str[i]=str[len-1-i];
-		str[len-1-i]=ch;
+		str[i]=str[len+1-i];
+		str[len+1-i]=ch;
 		/* code */
 	}
 	printf("%s\n",str );
