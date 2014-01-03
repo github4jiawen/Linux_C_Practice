@@ -415,3 +415,8 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
+
+"""""""
+"auto pairs gentle
+let g:AutoPairsUseInsertedCount = 1
