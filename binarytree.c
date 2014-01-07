@@ -31,3 +31,23 @@ link init(unsigned char VLR[],unsigned char LVR[],int n)
 		return t;
 	}
 }
+
+void pre_order(link t,void (*visit)(link))
+{
+	if (!t)
+	{
+		return ;
+	}
+	visit(t);
+	pre_order(t->l,visit);
+	pre_order(t-r,visit);
+}
+
+void in_order(link t,void （*visit)(link))
+{
+	if(!t)
+		return;
+	in_order(t->l,visit);
+	visit(t);
+	in_order(t->r,visit);
+}
