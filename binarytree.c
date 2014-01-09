@@ -51,3 +51,34 @@ void in_order(link t,void （*visit)(link))
 	visit(t);
 	in_order(t->r,visit);
 }
+
+void post_order(link t,void (*visit)(link))
+{
+	if(!t)
+		return;
+	post_order(t->l,visit);
+	post_order(t->r,visit);
+	visit(t);
+}
+
+int count(link t)
+{
+	if(!t)
+		return 0;
+	return 1+count(t->l)+count(t->r);
+}
+
+int depth(link t)
+{
+	int dl,dr;
+	if(!t)
+		return 0;
+	dl=depth(t->l);
+	dr=depth(t->r);
+	return 1+(dl>dr?dl:dr);
+}
+
+void destroy(link t)
+{
+	post_order(t,free_node);
+}
